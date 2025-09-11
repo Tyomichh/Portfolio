@@ -1,0 +1,16 @@
+:root {
+  --color-primary: #eff1f3;
+  --color-secondary: #2541b2;
+  --color-tertiary: #1768ac;
+  --color-text: #171717;
+}
+
+[data-theme="dark"] {
+  --color-primary: #171717;
+  --color-secondary: #054a29;
+  --color-tertiary: #3c6e71;
+  --color-text: #eff1f3;
+}
+
+$color-emergency: #a30b37;
+$font-base: "Inter", sans-serif;
