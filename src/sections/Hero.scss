@@ -1,25 +1,83 @@
-.hero_position-name {
-  display: inline-flex;
-  align-items: center;
-  text-align: center;
+.hero {
+  display: flex;
+  align-items: flex-end;
 
-  &::before,
-  &::after {
-    content: "";
-    display: block;
-    width: 50px;
-    height: 2px;
-    background-color: black;
+  h1 {
+    font-weight: 400;
   }
 
-  &::before {
-    margin-right: 10px;
+  &_position {
+    position: relative;
+    display: grid;
+    grid-template-columns: max-content max-content;
+    align-items: center;
+
+    &-name {
+      writing-mode: vertical-rl;
+      display: inline-flex;
+      align-items: center;
+      text-align: center;
+
+      &::before,
+      &::after {
+        content: "";
+        display: block;
+        width: 100px;
+        height: 3px;
+      }
+
+      &::before {
+        margin-bottom: 50px;
+        transform: rotate(90deg);
+        transform-origin: bottom center;
+        background: linear-gradient(to left, transparent, var(--color-text));
+      }
+
+      &::after {
+        margin-top: 50px;
+        transform: rotate(90deg);
+        transform-origin: top center;
+        background: linear-gradient(to right, transparent, var(--color-text));
+      }
+    }
+
+    .hero_photo {
+      width: 100%;
+      width: 500px;
+      max-height: 500px;
+      padding: 0 16px;
+      object-fit: cover;
+    }
   }
 
-  &::after {
-    margin-left: 10px;
-  }
+  &_about {
+    .hero_name {
+    }
 
-  transform: rotate(90deg);
-  transform-origin: left;
+    &-text {
+      display: block;
+      width: 55%;
+      margin-bottom: 100px;
+    }
+
+    .hero_resume-btn {
+      display: inline-flex;
+      padding: 0.8em 2em;
+      line-height: 1.2;
+      font-weight: 600;
+      color: var(--color-primary);
+      background-color: var(--color-text);
+      border-radius: 1.5em;
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: all 0.3s ease;
+      box-shadow: 0px 4px 14px var(--color-text-faded);
+
+      &:hover {
+        transform: translateY(-4px);
+      }
+    }
+  }
 }
