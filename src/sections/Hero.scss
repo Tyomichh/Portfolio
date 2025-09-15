@@ -1,18 +1,17 @@
 .hero {
   display: flex;
   align-items: flex-end;
+  gap: 16px;
+  justify-content: center;
 
-  h1 {
-    font-weight: 400;
-  }
-
-  &_position {
+  &_role {
     position: relative;
-    display: grid;
-    grid-template-columns: max-content max-content;
+    display: flex;
     align-items: center;
+    gap: 16px;
+    min-height: 200px;
 
-    &-name {
+    &-title {
       writing-mode: vertical-rl;
       display: inline-flex;
       align-items: center;
@@ -42,22 +41,21 @@
     }
 
     .hero_photo {
-      width: 100%;
-      width: 500px;
-      max-height: 500px;
-      padding: 0 16px;
+      width: clamp(300px, 35vw, 500px);
+      height: clamp(300px, 35vw, 500px);
       object-fit: cover;
     }
   }
 
   &_about {
     .hero_name {
+      width: fit-content;
     }
 
     &-text {
       display: block;
-      width: 55%;
-      margin-bottom: 100px;
+      max-width: clamp(500px, 50%, 900px);
+      margin-bottom: clamp(20px, 5vw, 100px);
     }
 
     .hero_resume-btn {
@@ -65,19 +63,64 @@
       padding: 0.8em 2em;
       line-height: 1.2;
       font-weight: 600;
-      color: var(--color-primary);
-      background-color: var(--color-text);
+      //color: var(--color-text);
+      //background-color: var(--color-primary);
       border-radius: 1.5em;
-      cursor: pointer;
+      // border: 1px solid var(--color-text);
       text-align: center;
-      text-decoration: none;
-      white-space: nowrap;
       transition: all 0.3s ease;
-      box-shadow: 0px 4px 14px var(--color-text-faded);
+      box-shadow: 0 0 2px var(--color-text-faded),
+        0 0 4px var(--color-text-faded), 0 0 4px var(--color-text-faded),
+        0 0 6px var(--color-text-faded);
 
       &:hover {
-        transform: translateY(-4px);
+        transform: translateY(-6px);
+        background-color: var(--color-text);
+        color: var(--color-primary);
       }
     }
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .hero_role {
+    position: relative;
+    display: flex;
+    gap: 16px;
+    min-height: 200px;
+    flex-direction: column;
+    align-items: center;
+
+    &-title {
+      writing-mode: horizontal-tb;
+
+      &::before {
+        margin-bottom: 0;
+        transform: none;
+        transform-origin: 0;
+      }
+
+      &::after {
+        margin-top: 0;
+        transform: none;
+        transform-origin: 0;
+      }
+    }
+  }
+
+  .hero_about {
+    justify-items: center;
+  }
+
+  .hero_name {
+    text-align: center;
   }
 }

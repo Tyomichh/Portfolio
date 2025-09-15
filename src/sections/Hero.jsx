@@ -12,8 +12,8 @@ function Hero() {
 
   return (
     <section className="hero">
-      <div className="hero_position">
-        <h1 className="hero_position-name">Developer <br /> Frontend</h1>
+      <div className="hero_role">
+        <h1 className="hero_role-title">Developer <br /> Frontend</h1>
         <img src={MyPhoto} alt="Artem Lozenko" className="hero_photo" />
       </div>
 
@@ -24,7 +24,7 @@ function Hero() {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
         </p>
         <a href="/resume.pdf" download className="hero_resume-btn">
-          Resume CV
+          Download Resume CV
         </a>
       </div>
     </section>
