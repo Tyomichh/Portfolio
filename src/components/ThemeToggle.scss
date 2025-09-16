@@ -1,4 +1,22 @@
 .header_toggle {
+  &-btn {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 50px;
+    height: 28px;
+    border-radius: 28px;
+    border: none;
+    background-color: #ccc;
+    cursor: pointer;
+    transition: background 0.3s;
+
+    &:hover {
+      background-color: #bbb;
+    }
+  }
+
   .toggle-btn-circle {
     position: absolute;
     top: 3px;
@@ -9,9 +27,9 @@
     border-radius: 50%;
     transition: transform 0.3s;
 
-    .toggle-btn-icon path {
+    /*.toggle-btn-icon path {
       //fill: var(--color-text);
-    }
+    }*/
   }
 
   & .dark {
@@ -20,9 +38,9 @@
     .toggle-btn-circle {
       transform: translateX(22px);
 
-      .toggle-btn-icon path {
-        //fill: var(--color-text);
-      }
+      /*.toggle-btn-icon path {
+      //fill: var(--color-text);
+    }*/
     }
   }
 }

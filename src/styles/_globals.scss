@@ -43,10 +43,13 @@ h2 {
 }
 
 h3 {
-  color: var(--color-primary);
+  //font-size: 22px;
+  font-weight: 600;
+  @include adaptiv-font(22, 16);
 }
 
-p {
+p,
+span {
   //font-size: 18px;
   font-weight: 400;
   @include adaptiv-font(18, 14);
@@ -75,6 +78,8 @@ ul,
 ol,
 li {
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 img {

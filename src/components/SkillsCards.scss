@@ -1,0 +1,22 @@
+.skill_card {
+  max-width: 420px;
+  padding: 24px;
+  border-radius: 20px;
+  background-color: var(--color-primary);
+  box-shadow: 0 0 2px var(--color-text-faded), 0 0 4px var(--color-text-faded),
+    0 0 4px var(--color-text-faded), 0 0 6px var(--color-text-faded);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: scale(1.02);
+  }
+
+  &-title {
+    margin-bottom: 8px;
+    color: var(--color-text);
+  }
+
+  &-text {
+    color: var(--color-text);
+  }
+}

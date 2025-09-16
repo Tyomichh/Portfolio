@@ -1,0 +1,20 @@
+.about_row {
+  display: flex;
+  justify-content: space-between;
+
+  .about_label {
+    opacity: 70%;
+  }
+
+  .about_value {
+    min-width: 224px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about_row {
+    .about_value {
+      min-width: 192px;
+    }
+  }
+}
